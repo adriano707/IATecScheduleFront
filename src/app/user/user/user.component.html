@@ -3,7 +3,7 @@
       <mat-card style="margin: 5px">
         <mat-divider></mat-divider>
         <mat-card-content>
-          <div fxLayout="column">
+          <div fxLayout="row">
             <mat-form-field appearance="outline" fxFlex="100" fxFlex.xs="100">
               <mat-label>Nome</mat-label>
               <input matInput formControlName="name">
@@ -36,14 +36,14 @@
           </div>
           <mat-form-field appearance="legacy" fxFlex="25" fxFlex.xs="100">
             <mat-label>Sexo</mat-label>
-            <select matNativeControl required [(ngModel)]="sex">
+            <select matNativeControl required>
                 <option value="1">Masculino</option>
                 <option value="2">Feminino</option>
             </select>
         </mat-form-field>
         <mat-form-field appearance="legacy" fxFlex="25" fxFlex.xs="100">
             <mat-label>Tipo</mat-label>
-            <select matNativeControl required [(ngModel)]="type">
+            <select matNativeControl required>
                 <option value="1">Exclusivo</option>
                 <option value="2">Compartilhado</option>
             </select>
