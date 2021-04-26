@@ -1,0 +1,63 @@
+<div style="max-width: 1100px;margin: auto;margin-top: 40px">
+    <form [formGroup]="data" novalidate>
+      <mat-card style="margin: 5px">
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <div fxLayout="column">
+            <mat-form-field appearance="outline" fxFlex="100" fxFlex.xs="100">
+              <mat-label>Nome</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+          </div>
+          <div fxLayout="row">
+            <mat-form-field appearance="outline" fxFlex="70" fxFlex.xs="100">
+              <mat-label>E-mail</mat-label>
+              <input matInput formControlName="email">
+            </mat-form-field>
+          </div>
+          <div fxLayout="row">
+            <mat-form-field appearance="outline" fxFlex="50" fxFlex.xs="100">
+              <mat-label>Login</mat-label>
+              <input matInput formControlName="login">
+            </mat-form-field>
+          </div>
+          <div fxLayout="row">
+            <mat-form-field appearance="outline" fxFlex="50" fxFlex.xs="100">
+              <mat-label>Senha</mat-label>
+              <input type="password" matInput formControlName="password">
+            </mat-form-field>
+          </div>
+          
+          <div fxLayout="row">
+            <mat-form-field appearance="outline" fxFlex="50" fxFlex.xs="100">
+              <mat-label>Data de Nascimento</mat-label>
+              <input matInput formControlName="BirthDate">
+            </mat-form-field>
+          </div>
+          <mat-form-field appearance="legacy" fxFlex="25" fxFlex.xs="100">
+            <mat-label>Sexo</mat-label>
+            <select matNativeControl required [(ngModel)]="sex">
+                <option value="1">Masculino</option>
+                <option value="2">Feminino</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" fxFlex="25" fxFlex.xs="100">
+            <mat-label>Tipo</mat-label>
+            <select matNativeControl required [(ngModel)]="type">
+                <option value="1">Exclusivo</option>
+                <option value="2">Compartilhado</option>
+            </select>
+        </mat-form-field>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <div style="padding: 5px;" class="acoes">
+          <button mat-fab color="stroked" aria-label="Salvar" (click)="salvar()">
+            <mat-icon>save</mat-icon>
+          </button>
+          <button mat-fab color="basic" (click)="voltar()" aria-label="Example icon-button with a menu">
+            <mat-icon>keyboard_backspace</mat-icon>
+          </button>
+        </div>
+      </mat-card>
+    </form>
+  </div>

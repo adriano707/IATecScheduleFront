@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  authUrl: 'https://api-account-dev.azurewebsites.net/auth'
 };

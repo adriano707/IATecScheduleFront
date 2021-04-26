@@ -1,0 +1,25 @@
+<mat-card class="login-container" [class.mat-elevation-z8]="true">
+    <mat-card-header>
+      <mat-card-title>Acesso ao Sistema de Agenda de Eventos</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      <div style="padding: 10px;">
+        <form>
+          <mat-form-field>
+            <mat-label>Usuário</mat-label>
+            <input matInput [(ngModel)]="user" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}"/>
+          </mat-form-field>
+        </form>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="basic" (click)="logon()">Entrar</button>
+    </mat-card-actions>
+  </mat-card>
+  

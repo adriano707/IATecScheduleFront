@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  authUrl: 'https://api-account-dev.azurewebsites.net/auth', 
+  UserService: 'https://api-account-dev.azurewebsites.net/',
 };
 
 /*
