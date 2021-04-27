@@ -26,7 +26,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EventComponent } from './event/event.component';
-import { DataComponent } from './assets/data/data.component';
 import { ListEventsComponent } from './list-events/list-events.component';
 
 
@@ -36,7 +35,6 @@ import { ListEventsComponent } from './list-events/list-events.component';
     LoginComponent,
     UserComponent,
     EventComponent,
-    DataComponent,
     ListEventsComponent
   ],
   imports: [
