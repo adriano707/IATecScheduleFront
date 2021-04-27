@@ -16,11 +16,8 @@ export class LoginService {
   }
 
   login(username, password) {
-    const headers = new HttpHeaders({
-      'X-App-Version': '0.4'
-    });
-    const options = {headers};
-    return this.http.post<any>(environment.authUrl, {username, password}, options).subscribe(user => {
+    
+    return this.http.post<any>(environment.authUrl, {username, password}).subscribe(user => {
       localStorage.setItem('user', JSON.stringify(user));
       const routeToReturn = this.route.snapshot.queryParams.returnUrl || '/';
       this.router.navigate([routeToReturn]);

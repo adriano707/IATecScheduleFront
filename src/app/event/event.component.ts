@@ -21,8 +21,9 @@ export class EventComponent implements OnInit {
   });
 
   constructor(
-    private fb: FormBuilder,
+    private router: Router,
     private httpClient: HttpClient,
+    private fb: FormBuilder,
     private notificationService: NotificationService,
     private spinnerService: SpinnerService
   ) {}
@@ -31,7 +32,7 @@ export class EventComponent implements OnInit {
 
   save(): void {
     this.httpClient
-      .post<any>(`https://localhost:44317/events`, this.data.value)
+      .post<any>(`https://localhost:44317/user`, this.data.value)
       .subscribe(
         (res) => {
           this.spinnerService.spin$.next(false);
