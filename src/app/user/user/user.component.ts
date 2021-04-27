@@ -23,7 +23,6 @@ export class UserComponent implements OnInit {
     password: null,
     BirthDate: null,
     sex: null,
-    type: null,
     role: 'basic_user'
   });
 

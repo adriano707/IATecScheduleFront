@@ -21,12 +21,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { EventComponent } from './event/event.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    EventComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +49,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatSnackBarModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatNativeDateModule, 
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
