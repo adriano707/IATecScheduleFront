@@ -14,7 +14,7 @@ export class EventComponent implements OnInit {
   data = this.fb.group({
     name: null,
     type: null,
-    EventDate: null,
+    date: null,
     local: null,
     participants: null,
     status: null,
