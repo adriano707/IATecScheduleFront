@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {catchError, map, retry} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
+import { User } from 'src/app/models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,35 @@ import {environment} from '../../../environments/environment';
 export class UserService {
   constructor(private http: HttpClient) { }
 
-  ObterTodasAsPessoas(): Observable<any>{
+  url = 'http://localhost:44317/users';
+
+  GetAllPeople(): Observable<any>{
     return this.http.get<Observable<any>>(`${environment.UserService}users`);
   }
 
-  ObterPessoas(filter = '', sortOrder = 'asc',
+  GetUser(): Observable<User[]>{
+    return this.http.get<User[]>(this.url)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
+
+  }
+
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Erro ocorreu no lado do client
+      errorMessage = error.error.message;
+    } else {
+      // Erro ocorreu no lado do servidor
+      errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
+  };
+
+  GetPeople(filter = '', sortOrder = 'asc',
                pageNumber = 0, pageSize = 10): Observable<any>{
     return this.http.get<Observable<any>>(`${environment.UserService}users`, {
       params: new HttpParams()
@@ -28,7 +53,7 @@ export class UserService {
       );
   }
 
-  obterTodos(filter: string = '', sortOrder: string = 'asc', pageNumber: number = 0, pageSize: number = 20): Observable<any> {
+  GetAll(filter: string = '', sortOrder: string = 'asc', pageNumber: number = 0, pageSize: number = 20): Observable<any> {
     return this.http.get<Observable<any>>(`${environment.UserService}users`, {
       params: new HttpParams()
         .set('Filter', filter)
@@ -41,7 +66,7 @@ export class UserService {
       );
   }
 
-  cadastrarUsuario(data): Observable<any>{
+  RegisterUser(data): Observable<any>{
     return this.http
       .post<any>(`${environment.UserService}users`, data);
 

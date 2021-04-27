@@ -1,0 +1,31 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Adriano",
+        "email": "adriano@gmail",
+        "login": "adriano",
+        "senha": "210806",
+        "dataNascimento": "03/07/1987",
+        "sexo": "Masculino"
+      },
+      {
+        "id": 2,
+        "name": "Andre",
+        "email": "anderneto@gmail",
+        "login": "neto",
+        "senha": "58070102",
+        "dataNascimento": "27/07/1985",
+        "sexo": "Masculino"
+      },
+      {
+        "id": 3,
+        "name": "Leila",
+        "email": "leila@gmail",
+        "login": "leila",
+        "senha": "232323",
+        "dataNascimento": "03/06/1989",
+        "sexo": "Feminino"
+      }
+    ]
+  }

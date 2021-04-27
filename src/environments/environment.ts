@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   authUrl: 'https://api-account-dev.azurewebsites.net/auth', 
-  UserService: 'https://api-account-dev.azurewebsites.net/',
+  UserService: 'https://localhost:44317'
 };
 
 /*

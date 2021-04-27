@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EventComponent } from './event/event.component';
+import { DataComponent } from './assets/data/data.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { EventComponent } from './event/event.component';
     AppComponent,
     LoginComponent,
     UserComponent,
-    EventComponent
+    EventComponent,
+    DataComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +53,8 @@ import { EventComponent } from './event/event.component';
     MatSelectModule,
     BrowserAnimationsModule,
     MatNativeDateModule, 
-    MatDatepickerModule
+    MatDatepickerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
