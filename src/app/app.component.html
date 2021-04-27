@@ -1,11 +1,18 @@
-<mat-card>
-  <app-user></app-user>
-</mat-card>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>IATec - Schedule</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/create-users'"> Create User </a>
+      <a mat-button [routerLink]="'/login'"> Login </a>
+      <a mat-button [routerLink]="'/create-event'"> Create Events </a>
+      <a mat-button [routerLink]="'/list-events'"> List Events </a>
 
-<mat-card>
-  <app-login></app-login>
-</mat-card>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
 
-<mat-card>
-  <app-event></app-event>
-</mat-card>

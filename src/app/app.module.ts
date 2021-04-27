@@ -11,6 +11,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,6 +27,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EventComponent } from './event/event.component';
 import { DataComponent } from './assets/data/data.component';
+import { ListEventsComponent } from './list-events/list-events.component';
 
 
 @NgModule({
@@ -33,7 +36,8 @@ import { DataComponent } from './assets/data/data.component';
     LoginComponent,
     UserComponent,
     EventComponent,
-    DataComponent
+    DataComponent,
+    ListEventsComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +58,9 @@ import { DataComponent } from './assets/data/data.component';
     BrowserAnimationsModule,
     MatNativeDateModule, 
     MatDatepickerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent],
