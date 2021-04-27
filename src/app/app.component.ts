@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/user/services/user.service';
 import { User } from 'src/app/models/user';
 import { NgForm } from '@angular/forms';
 
@@ -14,10 +13,9 @@ export class AppComponent implements OnInit{
   user = {} as User;
   users: User[];
 
-  constructor(private userService: UserService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.userService.GetUser();
   }
 
 }

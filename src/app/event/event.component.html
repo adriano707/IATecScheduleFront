@@ -16,8 +16,8 @@
           <mat-form-field appearance="legacy" fxFlex="50" fxFlex.xs="100">
             <mat-label>Tipo</mat-label>
             <select matNativeControl required formControlName="type">
-                <option value="1">Exclusivo</option>
-                <option value="2">Compartilhado</option>
+                <option [ngValue]="1">Exclusivo</option>
+                <option [ngValue]="2">Compartilhado</option>
             </select>
         </mat-form-field>
         <div fxLayout="row">
@@ -43,9 +43,9 @@
           <mat-form-field appearance="legacy" fxFlex="50" fxFlex.xs="100">
             <mat-label>Status</mat-label>
             <select matNativeControl required formControlName="status">
-                <option value="1">Próximo Evento</option>
-                <option value="2">Evento em Andamento</option>
-                <option value="3">Evento Finalizado</option>
+                <option [ngValue]="1">Próximo Evento</option>
+                <option [ngValue]="2">Evento em Andamento</option>
+                <option [ngValue]="3">Evento Finalizado</option>
             </select>
         </mat-form-field>
 

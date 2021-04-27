@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NotificationService } from 'src/app/Shared/services/notification.service';
 import { SpinnerService } from 'src/app/Shared/services/spinner.service';
 
@@ -31,8 +31,18 @@ export class EventComponent implements OnInit {
   ngOnInit(): void {}
 
   save(): void {
+
+    const infoUser = localStorage.getItem('user');
+    const user = JSON.parse(infoUser);
+
+    const headers = new HttpHeaders({
+      'Authorization': `bearer ${user.token}`
+    });
+
+    const options = {headers};
+
     this.httpClient
-      .post<any>(`https://localhost:44317/user`, this.data.value)
+      .post<any>(`https://localhost:44317/events`, this.data.value, options)
       .subscribe(
         (res) => {
           this.spinnerService.spin$.next(false);

@@ -10,19 +10,19 @@
         <mat-card-content fxLayout="column">
           <mat-form-field appearance="outline" fxFlex="100" fxFlex.xs="100">
             <mat-label>Usuário</mat-label>
-            <input matInput formControlName="user" />
+            <input type="text" matInput [(ngModel)]="user" />
           </mat-form-field>
           <div fxLayout="row">
             <mat-form-field appearance="outline" fxFlex="50" fxFlex.xs="100">
               <mat-label>Senha</mat-label>
-              <input type="password" matInput formControlName="password" />
+              <input type="password" matInput [(ngModel)]="password" />
             </mat-form-field>
           </div>
         </mat-card-content>
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="basic" (click)="logon()">Entrar</button>
+      <button mat-raised-button color="basic" (click)="login()">Entrar</button>
     </mat-card-actions>
   </mat-card>
 </div>
