@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NotificationService } from 'src/app/Shared/services/notification.service';
+import { SpinnerService } from 'src/app/Shared/services/spinner.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private notificationService: NotificationService,
+    private spinnerService: SpinnerService
   ) {}
 
   ngOnInit(): void {}
@@ -28,15 +32,13 @@ export class LoginComponent implements OnInit {
       })
       .subscribe((user) => {
         localStorage.setItem('user', JSON.stringify(user));
-        /*const routeToReturn = this.route.snapshot.queryParams.returnUrl || '/';
-        this.router.navigate([routeToReturn]);*/
+
+        this.spinnerService.spin$.next(false);
+        this.notificationService.showNotification(
+          'successfully logged in.',
+          ''
+        );
+
       });
   }
-
-  logout() {
-    localStorage.removeItem('user');
-    this.router.navigate(['/login']);
-  }
-
-
 }
