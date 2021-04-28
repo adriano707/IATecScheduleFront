@@ -16,7 +16,7 @@ export class EventComponent implements OnInit {
     type: null,
     date: null,
     local: null,
-    participants: null,
+    participants: 0,
     status: null,
   });
 
